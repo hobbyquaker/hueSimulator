@@ -637,6 +637,7 @@ app.get('/api/:username/config', function(req, res) {
         var username = req.params.username;
         if (app.get('state').config.whitelist.hasOwnProperty(username)) {
             res.send(200, JSON.stringify(app.get('state').config));
+            return;
         }
     }
     // only send name and swversion if the user is not authed
